@@ -1,13 +1,19 @@
-function Appointment ({patient, date, time}) {
-    return (
-        <li style={{ marginBottom: "10px" }}>
-            <h3>{patient}</h3>
-            <p>{date}</p>
-            <p>{time}</p>
+import Card from "./Card";
 
-            <button onClick={() => alert("Viewing Appointment")}>View</button>
-        </li>
-    );
+function Appointment({ patient, date, time }) {
+  return (
+    <li>
+      <Card>
+        <h3>{patient}</h3>
+        <p>Date: {date}</p>
+        <p>Time: {time}</p>
+
+        <button onClick={() => alert("Viewing appointment")}>
+          View
+        </button>
+      </Card>
+    </li>
+  );
 }
 
 export default Appointment;
