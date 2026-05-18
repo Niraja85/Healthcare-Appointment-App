@@ -1,6 +1,6 @@
 import Card from "./Card";
 
-function Appointment({ patient, date, time }) {
+function Appointment({ patient, date, time, onView }) {
   return (
     <li>
       <Card>
@@ -8,7 +8,7 @@ function Appointment({ patient, date, time }) {
         <p>Date: {date}</p>
         <p>Time: {time}</p>
 
-        <button onClick={() => alert("Viewing appointment")}>
+        <button onClick={() => onView(patient)}>
           View
         </button>
       </Card>

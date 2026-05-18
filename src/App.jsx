@@ -3,26 +3,33 @@ import Greeting from "./Greeting";
 import Appointment from "./Appointment";
 
 function App() {
+
+  function handleView(patientName) {
+    console.log("Viewing appointment for", patientName);
+  }
+
   return (
     <div>
-      <h1>Healthcare App 🚀</h1>
       <Header />
       <Greeting />
-      <h2>
-        <ul>
-          <Appointment
-            patient="Niraja"
-            date="20th April"
-            time="11:00 am"
-          />
 
-          <Appointment
-            patient="Abhishek Tripathi"
-            date="25th April"
-            time="12:00 pm"
-          />
-        </ul>
-      </h2>
+      <h2>Appointments</h2>
+
+      <ul>
+        <Appointment
+          patient="Niraja"
+          date="20 April"
+          time="10:00 AM"
+          onView={handleView}
+        />
+
+        <Appointment
+          patient="Abhishek"
+          date="21 April"
+          time="11:30 AM"
+          onView={handleView}
+        />
+      </ul>
     </div>
   );
 }
