@@ -5,7 +5,9 @@ function Appointment({ patient, date, time, onView }) {
     <li>
       <Card>
         <h3>{patient}</h3>
+
         <p>Date: {date}</p>
+
         <p>Time: {time}</p>
 
         <button onClick={() => onView(patient)}>
