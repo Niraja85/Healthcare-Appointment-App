@@ -31,6 +31,7 @@ function App() {
       <Greeting />
 
       <h2>Appointments</h2>
+      <p>Total appointments: {totalAppointments}</p>
 
       <ul>
         {appointments.map((appt) => (
