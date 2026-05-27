@@ -1,8 +1,9 @@
 import Card from "./Card";
+import "./Appointment.css";
 
-function Appointment({ patient, date, time, onView }) {
+function Appointment({ patient, date, time, onView, isSelected }) {
   return (
-    <li>
+    <li className={isSelected ? "active" : ""}>
       <Card>
         <h3>{patient}</h3>
 

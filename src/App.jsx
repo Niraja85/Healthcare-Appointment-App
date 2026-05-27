@@ -4,7 +4,8 @@ import Greeting from "./Greeting";
 import Appointment from "./Appointment";
 
 function App() {
-  const [ appointments, setAppointments] = useState([
+
+  const [appointments, setAppointments] = useState([
     {
       id: 1,
       patient: "Niraja",
@@ -16,21 +17,26 @@ function App() {
       patient: "Abhishek",
       date: "21 April",
       time: "11:30 AM",
-
     }
   ]);
+
+  const [selectedPatient, setSelectedPatient] = useState("");
+
   const totalAppointments = appointments.length;
 
   function handleView(patientName) {
-    console.log("Viewing appointment for", patientName);
+    setSelectedPatient(patientName);
   }
 
   return (
     <div>
+
       <Header />
+
       <Greeting />
 
       <h2>Appointments</h2>
+
       <p>Total appointments: {totalAppointments}</p>
 
       <ul>
@@ -41,10 +47,11 @@ function App() {
             date={appt.date}
             time={appt.time}
             onView={handleView}
+            isSelected={selectedPatient === appt.patient}
           />
-        )
-      )}
+        ))}
       </ul>
+
     </div>
   );
 }
