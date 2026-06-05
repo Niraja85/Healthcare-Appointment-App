@@ -37,7 +37,15 @@ function App() {
 
       <h2>Appointments</h2>
 
-      <p>Total appointments: {totalAppointments}</p>
+      <p
+        style={{
+          color: totalAppointments > 0
+            ? "green"
+            : "red"
+        }}
+      >
+        Total appointments: {totalAppointments}
+      </p>
 
       <ul>
         {appointments.map((appt) => (
